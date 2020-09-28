@@ -3,8 +3,15 @@ import React from "react"
 function DecimalInput(props) {
     return (
         <div>
-            <h2>Decimal</h2>
-            <input type="text" readOnly={true} value={props.decimalValue === undefined ? "Valor não binário, insira 0 ou 1" : props.decimalValue}/>
+            <div class="group">
+                <input 
+                    type="text"
+                    className="decimal-input centered"
+                    readOnly={true}
+                    placeholder="Insira um valor acima"
+                    value={props.decimalValue === undefined ? "Valor Inválido" : props.decimalValue}
+                    style={{color: props.decimalValue === undefined ? "red" : "white"}} />
+            </div>
         </div>
     )
 }

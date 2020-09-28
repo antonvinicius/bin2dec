@@ -1,4 +1,5 @@
 body {
+  background-color: rgb(218, 218, 218);
   height: 100%;
   width: 100%;
   padding: 0;
@@ -8,4 +9,130 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  width: 500px;
+  background-color: white;
+  box-shadow: 0px 18px 40px 0px rgba(0,0,0,0.75);
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.pretty-input {
+  display: block;
+  margin: 2em auto;
+  border: none;
+  padding: 0;
+  width: 12ch;
+  background: repeating-linear-gradient(90deg, dimgrey 0, dimgrey 1ch, transparent 0, transparent 1.5ch) 0 100%/ 11.5ch 2px no-repeat;
+  font: 5ch droid sans mono, consolas, monospace;
+  letter-spacing: 0.5ch;
+}
+.pretty-input:focus {
+  outline: none;
+  color: dodgerblue;
+}
+
+.group {
+  width: 100%;
+  height: 110px;
+  overflow: hidden;
+  position: relative;
+}
+
+label {
+  position: absolute;
+  top: 36.6666666667px;
+  color: rgba(255, 255, 255, .5);
+  font: 400 550px/15 Roboto;
+  cursor: text;
+  transition: 0.25s ease;
+}
+
+.decimal-input {
+  border-radius: 30px !important; 
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  width: 100%;
+  padding: 30px;
+  border: none;
+  border-radius: 0;
+  color: white;
+  background: #333;
+  font-size: 36.6666666667px;
+  transition: 0.3s ease;
+}
+
+.decimal-input:valid ~ label {
+  top: 0;
+  font: 700 550px/25 Roboto;
+  color: rgba(255, 255, 255, .5);
+}
+
+.decimal-input:focus {
+  outline: none;
+}
+
+.decimal-input:focus ~ label {
+  top: 0;
+  font: 700 550px/25 Roboto;
+  color: #2196f3;
+}
+
+.decimal-input:focus ~ .bar:before {
+  transform: translateX(0);
+}
+
+.decimal-input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #333 inset;
+  -webkit-text-fill-color: white !important;
+}
+
+.bar {
+  background: rgba(255, 255, 255, .5);
+  content: '';
+  width: 550px;
+  height: 3.6666666667px;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.bar:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 150%;
+  background: #2196f3;
+  transform: translateX(-100%);
+}
+
+::selection {
+  background: rgba(33, 150, 243, .3);
+}
+
+@media(max-width: 600px) {
+  .box {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+  }
+
+  .decimal-input {
+    font-size: 24px;
+  }
 }
