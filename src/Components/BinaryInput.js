@@ -2,7 +2,10 @@ import React from "react"
 
 function BinaryInput() {
     return (
-        <h1>BinaryInput</h1>
+        <div>
+            <h2>Binário</h2>
+            <input type="text"/>
+        </div>
     )
 }
 

@@ -2,7 +2,9 @@ import React from "react"
 
 function Header() {
     return (
-        <h1>Header</h1>
+        <div>
+            <h2>Bin2Dec<br />Insira o valor em binário e veja<br/> seu correspondente em decimal</h2>
+        </div>
     )
 }
 

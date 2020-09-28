@@ -2,7 +2,10 @@ import React from "react"
 
 function DecimalInput() {
     return (
-        <h1>DecimalInput</h1>
+        <div>
+            <h2>Decimal</h2>
+            <input type="text" readOnly={true}/>
+        </div>
     )
 }
 
