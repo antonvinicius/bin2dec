@@ -1,4 +1,7 @@
 export default (n) => {
+    if(isNaN(n)){
+        return undefined
+    }
     if(isBinary(n)){
         let base = 1
         let decimal = 0
