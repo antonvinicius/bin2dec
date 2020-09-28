@@ -1,5 +1,7 @@
 import React from "react"
 
+import BinaryConverter from "../Util/BinaryConverter"
+
 function BinaryInput() {
     return (
         <div>
