@@ -1,10 +1,6 @@
 import React from "react"
 
 class Formula extends React.Component {
-    constructor(){
-        super()
-    }
-
     render() {
         let digits = this.props.binaryValue.toString().split('').map(Number) //get digits from binary number
         digits.reverse() //Reverse it again to be in correct order of the input
@@ -18,7 +14,7 @@ class Formula extends React.Component {
 }
 
 function constructFormula(digits, decimalValue) {
-    if (decimalValue == 0)
+    if (decimalValue === 0)
         return "0"
     else if (!decimalValue) //If value isn't in binary form
         return "Valor inválido"
