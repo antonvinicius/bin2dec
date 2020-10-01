@@ -88,6 +88,11 @@ body {
 }
 
 @media(max-width: 600px) {
+  .app{
+    width: 100%;
+    height: 100%;
+  }
+
   .box {
     width: 100%;
     height: 100%;
@@ -97,6 +102,29 @@ body {
   .decimal-input {
     font-size: 24px;
   }
+  .btn {
+    padding: 0 !important;
+  }
+  .footer {
+    font-size: 15px;
+  }
+  .inputGroup{
+    flex-direction: column !important;
+  }
+  .inputGroup button {
+    margin-top: -60px;
+    margin-bottom: 50px;
+  }
+  #binaryInput {
+    margin-top: 15px;
+  }
+}
+
+.inputGroup{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 .formula {

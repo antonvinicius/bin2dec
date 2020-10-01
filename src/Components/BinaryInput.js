@@ -45,7 +45,7 @@ class BinaryInput extends React.Component {
         return (
             <div>
                 {/* Inputs for binary and decimal value */}
-                <div style={{display: 'flex', justifyContent: 'center', alignContent: 'center', alignItems: 'center'}}>
+                <div className="inputGroup">
                     <input
                         id="binaryInput"
                         type="text"
