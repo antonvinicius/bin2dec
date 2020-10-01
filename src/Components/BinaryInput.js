@@ -26,8 +26,7 @@ class BinaryInput extends React.Component {
         while (digits.length > 8) { // Force length of values to be 8
             digits.pop()
         }
-        
-        digits.reverse() //Reverse it cause input is backwards
+
         binaryValue = this.getNumberOfDigits(digits) //Return it as a proper Number
 
         this.setState({ decimalValue: BinaryConverter(binaryValue) })
@@ -46,13 +45,23 @@ class BinaryInput extends React.Component {
         return (
             <div>
                 {/* Inputs for binary and decimal value */}
-                <input
-                    id="binaryInput"
-                    type="text"
-                    className="pretty-input right"
-                    maxLength={8}
-                    onChange={this.setDecBin}
-                />
+                <div style={{display: 'flex', justifyContent: 'center', alignContent: 'center', alignItems: 'center'}}>
+                    <input
+                        id="binaryInput"
+                        type="text"
+                        className="pretty-input"
+                        maxLength={8}
+                        onChange={this.setDecBin}
+                    />
+                    <button 
+                        className="btn btn-4"
+                        style={{height: '50px'}}
+                        onClick={() => {
+                            document.getElementById('binaryInput').value = ''
+                            this.setState({binaryValue: 0})
+                            this.setState({decimalValue: 0})
+                        }}>Limpar</button>
+                </div>
                 <DecimalInput
                     decimalValue={this.state.decimalValue}
                 />
