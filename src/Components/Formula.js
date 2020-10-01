@@ -15,10 +15,10 @@ function constructFormula(digits, decimalValue) {
     if(!decimalValue) //If value isn't in binary form
         return "Valor inválido"
     let result = `(${decimalValue})₂ = `
-    if (digits.length != 0) {
+    if (digits.length !== 0) {
         for (const [i, v] of digits.entries()) { //Get index and value from array
             result += `(${v})*2${powerFormat(i)} `
-            if (i != digits.length - 1) //Last value doesn't receive a "+" sign afterwards
+            if (i !== digits.length - 1) //Last value doesn't receive a "+" sign afterwards
                 result += " + "
         }
     }

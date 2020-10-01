@@ -34,7 +34,12 @@ body {
 }
 
 .centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   text-align: center;
+  align-items: center;
 }
 
 .pretty-input {
@@ -119,4 +124,37 @@ body {
   color: #f1653a;
   border-color: transparent;
   background-color: transparent;
+}
+
+/* Modal */
+#toggle {
+  visibility: hidden;
+  opacity: 0;
+  position: relative;
+  z-index: -1;
+}
+
+#toggle:checked ~ dialog {
+  display: block;
+}
+
+label {
+  width: 45%;
+  background: #f1653a;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+dialog {
+  animation: appear 350ms ease-in 1;
+  max-width: 500px;
+  box-shadow: 10px 10px 51px 6px rgba(0,0,0,0.75);
+  border: none;
 }
