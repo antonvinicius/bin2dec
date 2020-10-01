@@ -15,6 +15,11 @@ body {
   box-sizing: border-box;
 }
 
+.right {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
 .box {
   position: absolute;
   top: 50%;
@@ -135,4 +140,35 @@ label {
   .decimal-input {
     font-size: 24px;
   }
+}
+
+.formula {
+  font-family: "Inconsolata", monospace;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+/* Button */
+.btn {
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: 900;
+  color: #fff;
+  background-color: #89daff;
+  border: 2px solid #89daff;
+  cursor: pointer;
+  width: max-content;
+  transition: 0.25s ease;
+}
+
+.btn-4:hover {
+  box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.1);
+  color: #89daff;
+  border-color: transparent;
+  background-color: transparent;
 }
