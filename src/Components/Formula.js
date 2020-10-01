@@ -1,31 +1,30 @@
 import React from "react"
 
 function Formula(props) {
-    let digits = props.binaryValue.toString().split('').map(Number)
-    digits.reverse()
+    let digits = props.binaryValue.toString().split('').map(Number) //get digits from binary number
+    digits.reverse() //Reverse it again to be in correct order of the input
     let formulaTxt = constructFormula(digits, props.decimalValue)
     return (
         <div>
-            <h3 className="formula">{constructFormula(digits, props.decimalValue)}</h3>
+            <h3 className="formula">{formulaTxt}</h3>
         </div>
     )
 }
 
 function constructFormula(digits, decimalValue) {
-    if(!decimalValue)
+    if(!decimalValue) //If value isn't in binary form
         return "Valor inválido"
     let result = `(${decimalValue})₂ = `
     if (digits.length != 0) {
-        for (const [i, v] of digits.entries()) {
+        for (const [i, v] of digits.entries()) { //Get index and value from array
             result += `(${v})*2${powerFormat(i)} `
-            if (i != digits.length - 1)
+            if (i != digits.length - 1) //Last value doesn't receive a "+" sign afterwards
                 result += " + "
         }
     }
-
     return result
 }
-
+//This functions return a power format of a certain index
 function powerFormat(i) {
     let powerFormat = ""
     switch (i) {
@@ -56,7 +55,6 @@ function powerFormat(i) {
         default:
             break;
     }
-
     return powerFormat
 }
 

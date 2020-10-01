@@ -19,20 +19,22 @@ class BinaryInput extends React.Component {
 
     setDecBin() {
         const input = document.getElementById('binaryInput')
-        input.setAttribute('maxLength', 8)
         let binaryValue = input.value
-        let digits = binaryValue.toString().split('').map(Number)
-        while (digits.length > 8) {
+        let digits = binaryValue.toString().split('').map(Number) // Transform binary value to array of digits
+
+        input.setAttribute('maxLength', 8)
+        while (digits.length > 8) { // Force length of values to be 8
             digits.pop()
         }
-        digits.reverse()
-        binaryValue = this.getStringOfArray(digits)
+        
+        digits.reverse() //Reverse it cause input is backwards
+        binaryValue = this.getNumberOfDigits(digits) //Return it as a proper Number
 
         this.setState({ decimalValue: BinaryConverter(binaryValue) })
         this.setState({ binaryValue: binaryValue })
     }
 
-    getStringOfArray(array) {
+    getNumberOfDigits(array) {
         let string = ""
         for (const i of array) {
             string += i
@@ -43,6 +45,7 @@ class BinaryInput extends React.Component {
     render() {
         return (
             <div>
+                {/* Inputs for binary and decimal value */}
                 <input
                     id="binaryInput"
                     type="text"
@@ -53,6 +56,8 @@ class BinaryInput extends React.Component {
                 <DecimalInput
                     decimalValue={this.state.decimalValue}
                 />
+
+                {/* Conditional Rendering to show formula*/}
                 <div className="container">
                     <button className="btn btn-4" onClick={() => this.setState({ showFormula: this.state.showFormula ? false : true })}>
                         {this.state.showFormula ? 'Ocultar Formula' : 'Mostrar Formula'}
@@ -62,7 +67,6 @@ class BinaryInput extends React.Component {
                     binaryValue={this.state.binaryValue}
                     decimalValue={this.state.decimalValue}
                 /> : ""}
-
             </div>
         )
     }
